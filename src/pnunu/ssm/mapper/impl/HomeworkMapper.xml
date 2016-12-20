@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须是接口全类名： -->
+<mapper namespace="pnunu.ssm.mapper.HomeworkMapper">
+<!-- homework_id,task_id,homework_text,student_id,commit_date -->
+	<resultMap type="pnunu.ssm.po.Homework" id="homeworkMap">
+		<id column="homework_id" property="homeworkId"/>
+		<result column="task_id" property="taskId"/>
+		<result column="homework_text" property="homeworkText"/>
+		<result column="student_id" property="studentId"/>
+		<result column="commit_date" javaType="java.util.Date" property="commitDate"/>
+	</resultMap>
+	<select id="addHomework" parameterType="pnunu.ssm.po.Homework">
+		insert into homework(task_id,homework_text,student_id,commit_date) values(#{taskId}, #{homeworkText}, #{studentId}, #{commitDate})
+	</select>
+	<delete id="delHomework" parameterType="java.lang.Integer">
+		delete from homework where homework_id = #{homeworkId}
+	</delete>
+	<update id="updateHomework" parameterType="pnunu.ssm.po.Homework">
+		update homework set task_id = #{taskId}, homework_text = #{homeworkText}, student_id = #{studentId}, commit_date = #{commitDate}
+		where homework_id = #{homeworkId}
+	</update>
+	<select id="findHomework" resultMap="homeworkMap">
+		select * from homework
+	</select>
+</mapper>

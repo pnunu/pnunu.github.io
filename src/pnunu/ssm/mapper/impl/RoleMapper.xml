@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须是接口全类名： -->
+<mapper namespace="pnunu.ssm.mapper.RoleMapper">
+	<resultMap type="pnunu.ssm.po.Role" id="roleMap">
+		<id column="role_id" property="roleId"/>
+		<result column="role_name" property="roleName"/>
+		<result column="role_desc" property="roleDesc"/>
+	</resultMap>
+	
+	<insert id="addRole" parameterType="pnunu.ssm.po.Role" keyProperty="roleId" useGeneratedKeys="true">
+		insert into t_role(role_name, role_desc) values(#{roleName}, #{roleDesc})
+	</insert>
+	
+	<delete id="delRole" parameterType="java.lang.Integer">
+		delete from t_role where role_id = #{roleId}
+	</delete>
+	
+	<update id="updateRole" parameterType="pnunu.ssm.po.Role">
+		update t_role set role_name=#{roleName}, role_desc=#{roleDesc}
+		where role_id = #{roleId}
+	</update>
+	
+	<select id="findRole" resultMap="roleMap">
+		select * from t_role
+	</select>
+	<select id="findById" resultMap="roleMap" parameterType="java.lang.Integer">
+		select * from t_role where role_id = #{roleId}
+	</select>
+	
+	<delete id="grantNo" parameterType="java.lang.Integer">
+		delete from t_role_resource where role_id = #{roleId}
+	</delete>
+
+	<insert id="grant">
+		insert into t_role_resource(resource_id, role_id) values(#{resourceId}, #{roleId})
+	</insert>
+</mapper>

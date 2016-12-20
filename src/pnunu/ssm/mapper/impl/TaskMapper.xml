@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须是接口全类名： -->
+<mapper namespace="pnunu.ssm.mapper.TaskMapper">
+	<resultMap type="pnunu.ssm.po.Task" id="taskMap">
+		<id column="task_id" property="taskId"/>
+		<result column="blog_id" property="blogId"/>
+		<result column="task_name" property="taskName"/>
+		<result column="task_text" property="taskText"/>
+		<result column="task_date" javaType="java.util.Date" property="taskDate"/>
+		<result column="task_commit" javaType="java.util.Date" property="taskCommit"/>
+	</resultMap>
+	
+	<insert id="addTask" parameterType="pnunu.ssm.po.Task">
+		insert into task(blog_id, task_name, task_text, task_dat, etask_commit) 
+		values(#{blogId}, #{taskName}, #{taskText}, #{taskDate}, #{taskCommit})
+	</insert>
+	
+	<delete id="del" parameterType="java.lang.Integer">
+		delete from task where task_id = #{taskId}
+	</delete>
+	
+	<update id="updateTask">
+		update task set blog_id=#{blogId}, task_name=#{taskName}, task_text=#{taskText}, task_dat=#{taskDate}, etask_commit=#{taskCommit}
+		where task_id = #{taskId}
+	</update>
+	
+	<select id="findTask" resultMap="taskMap">
+		select * from task
+	</select>
+</mapper>

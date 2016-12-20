@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须是接口全类名： -->
+<mapper namespace="pnunu.ssm.mapper.ClassCodeMapper">
+	<resultMap type="pnunu.ssm.po.ClassCode" id="classCodeMap">
+		<id column="id" property="id"/>
+		<result column="name" property="name"/>
+		<result column="imgurl" property="imgurl"/>
+		<result column="desccode" property="desc"/>
+		<result column="teacher_num" property="teacherNum"/>
+		<result column="student_num" property="studentNum"/>
+	</resultMap>
+	<insert id="addClassCode" parameterType="pnunu.ssm.po.ClassCode">
+		insert into classcode(name, imgurl, desccode, teacher_num, student_num) values(#{name}, #{imgurl}, #{desc}, #{teacherNum}, #{studentNum})
+	</insert>
+	<delete id="delClassCode" parameterType="java.lang.Integer">
+		delete from classcode where id = #{id}
+	</delete>
+	<update id="updateClassCode" parameterType="pnunu.ssm.po.ClassCode">
+		update classcode set name = #{name}, imgurl = #{imgurl}, desccode = #{desc}, teacher_num = #{teacherNum}, student_num = #{studentNum}
+		where id = #{id}
+	</update>
+	<select id="findClassCode" resultMap="classCodeMap" parameterType="java.lang.Integer">
+		select * from classcode limit #{currentPage},10
+	</select>
+	
+	<select id="count" resultType="java.lang.Integer">
+		select count(1) from classcode
+	</select>
+	
+	<select id="findById" resultMap="classCodeMap" parameterType="java.lang.Integer">
+		select * from classcode where id = #{id}
+	</select>
+</mapper>

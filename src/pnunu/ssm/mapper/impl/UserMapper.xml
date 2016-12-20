@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须是接口全类名： -->
+<mapper namespace="pnunu.ssm.mapper.UserMapper">
+	<resultMap type="pnunu.ssm.po.User" id="userMap">
+		<id column="user_id" property="userId"/>
+		<result column="user_name" property="username"/>
+		<result column="user_realname" property="userRealname"/>
+		<result column="user_password" property="userPassword"/>
+		<result column="user_birthday" jdbcType="DATE" property="userBirthday"/>
+		<result column="user_sex" property="userSex"/>
+		<result column="user_hiredate" property="userHiredate"/>
+		<result column="user_ip" property="userIp"/>
+		<result column="teacher_id" property="teacherId"/>
+		<result column="role" property="role"/>
+	</resultMap>
+
+	<insert id="addUser" parameterType="pnunu.ssm.po.User" keyProperty="userId" useGeneratedKeys="true">
+		insert into t_user(user_name,user_realname,user_password,user_birthday,user_sex,user_hiredate,user_ip) 
+		values(#{username},#{userRealname},#{userPassword},#{userBirthday},#{userSex},#{userHiredate},#{userIp})
+	</insert>
+
+	<update id="updateUser" parameterType="pnunu.ssm.po.User">
+		update t_user set user_name=#{username},user_realname=#{userRealname},user_password=#{userPassword},user_birthday=#{userBirthday},user_sex=#{userSex},user_hiredate=#{userHiredate},user_ip=#{userIp}
+		where user_id = #{userId}
+	</update>
+
+	<delete id="delUser" parameterType="java.lang.Integer">
+		delete from t_user where user_id = #{userId}
+	</delete>
+
+	<select id="findById" parameterType="java.lang.Integer" resultMap="userMap">
+		select * from t_user where user_id = #{userId}
+	</select>
+
+	<select id="login" parameterType="pnunu.ssm.po.User" resultMap="userMap">
+		select * from t_user where user_name = #{username} and user_password=#{userPassword}
+	</select>
+
+	<select id="findAll" resultMap="userMap" parameterType="java.lang.Integer">
+		select u.*,r.role_id role from t_user u,t_user_role r where u.user_id = r.user_id limit #{currentPage},10
+	</select>
+
+	<insert id="addT" parameterType="java.lang.Integer">
+		insert into t_user_role(role_id,user_id) 
+		values(3, #{id})
+	</insert>
+	<update id="updateT" parameterType="java.lang.Integer">
+		update t_user_role set role_id=2
+		where user_id = #{id}
+	</update>
+	<delete id="delUserT" parameterType="java.lang.Integer">
+		delete from t_user_role where user_id = #{id}
+	</delete>
+	
+	<select id="findUsersCount" resultType="java.lang.Integer">
+		select count(1) from t_user u,t_user_role r where u.user_id = r.user_id
+	</select>
+</mapper>
