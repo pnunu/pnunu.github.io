@@ -14,6 +14,9 @@ links:
   - name:         关于我
     url:          /about
     external:     false
+   - name:         博客
+    url:          http://ipnunu.gitee.io/
+    external:     false
 
 
 permalink:        /posts/:title
