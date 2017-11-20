@@ -2,7 +2,7 @@ theme: jekyll-theme-cayman
 title: NUNU
 description:      "Such theme, very cool."
 url:              https://pnunu.github.io # Site url, without a slash at the end.
-signoff:          "muan" # Your name
+signoff:          "pnunu" # Your name
 facebook_appid:   # APP ID for like button, remove from /_includes/share.html if unwanted.
 google_analytics: # Set tracking, remove from /javascripts/basic.js if unwanted.
 share:            false # Turn on twitter and facebook share buttons
