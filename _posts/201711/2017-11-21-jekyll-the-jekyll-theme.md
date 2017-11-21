@@ -59,6 +59,7 @@ bundle exec jekyll serve
 ---
 
 > 成功启动
+
 ``` bundle exec jekyll serve ```
 看到如下内容，说明安装成功且启动成功
 ![Jekyll](/images/201711/20171121-jekyll-2.png)
