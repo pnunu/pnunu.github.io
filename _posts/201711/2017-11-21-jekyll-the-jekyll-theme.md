@@ -67,6 +67,9 @@ bundle exec jekyll serve
 ![Jekyll](/images/201711/20171121-jekyll-3.png)
 
 
+
+---
+
 注：
 如果启动报错
 
