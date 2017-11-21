@@ -1,7 +1,6 @@
 ---
-title: 装饰者模式[Decorator] - 一 
-date: 2017-11-22 22:20:52
-category:  Design Pattern
+title: 装饰者模式[Decorator] - 一
+date: 2017-11-20 22:06:52
 ---
 
 Decorator模式（别名Wrapper）：动态将职责附加到对象上，若要扩展功能，装饰者提供了比继承更具弹性的代替方案。
