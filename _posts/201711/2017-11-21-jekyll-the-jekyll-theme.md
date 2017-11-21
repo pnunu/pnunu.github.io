@@ -55,3 +55,19 @@ bundle exec jekyll serve
 
 # Now browse to http://localhost:4000
 ```
+
+---
+
+> 成功启动
+``` bundle exec jekyll serve ```
+看到如下内容，说明安装成功且启动成功
+![Jekyll](/images/201711/20171121-jekyll-2.png)
+访问浏览器，默认主题的效果
+![Jekyll](/images/201711/20171121-jekyll-3.png)
+
+
+注：
+如果启动报错
+
+查看 4000 端口是否有进程已经占用。
+> netstat -aon | findstr "4000"
