@@ -12,6 +12,7 @@
 jekyl 安装步骤：
 ```
 #   https://jekyllrb.com/docs/quickstart/
+#   http://jekyll.com.cn/
 
 # Install Jekyll and Bundler gems through RubyGems
 gem install jekyll bundler
