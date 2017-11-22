@@ -87,6 +87,12 @@ http://mahua.jser.me/
 http://marxi.co/
 ```
 
+MarkDown 转化为doc工具 -- pandoc
+
+GitHub 地址：``` https://github.com/jgm/pandoc ```
+
+使用命令：```  pandoc -f markdown -t pdf about.md -o about.pdf ```
+
 ---
 
 注释：
