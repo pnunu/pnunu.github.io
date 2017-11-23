@@ -19,6 +19,39 @@ log4j的输出严重影响了程序的效率。
     <version>1.7.9</version>
 </dependency>
 
+ > log4j.properties
+# Root logger option
+#log4j.rootLogger=DEBUG, file, stdout
+log4j.rootLogger=ERROR, file
+
+# Logging options for velocity (for templating)
+log4j.logger.velocity = INFO, file, stdout
+
+# Logging options for EHCache
+log4j.logger.net.sf.ehcache = WARN, file, stdout
+
+# Direct log messages to a log file
+# We don't specify a file to write to, because this is set programmatically upon application startup
+log4j.appender.file=org.apache.log4j.DailyRollingFileAppender
+#log4j.appender.file.MaxFileSize=1MB
+log4j.appender.file.File=D:/log/log4j
+log4j.appender.file.DatePattern=yyyy-MM-dd'.log'
+#log4j.appender.file.maxBackupIndex=1
+log4j.appender.file.layout=org.apache.log4j.PatternLayout
+log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
+
+# Direct log messages to stdout
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.Target=System.out
+log4j.appender.stdout.layout=org.apache.log4j.PatternLayout
+log4j.appender.stdout.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n
+
+log4j.logger.uk.ac.rdg.resc.edal.dataset.cdm.En3DatasetFactory=WARN
+log4j.logger.uk.ac.rdg.resc.edal.util.GraphicsUtils=WARN
+log4j.logger.uk.ac.rdg.resc.edal.dataset.cdm.NetcdfDatasetAggregator=WARN
+# This one is noisy on WARN
+log4j.logger.ucar.nc2.iosp.hdf5.H5header=ERROR
+
  > main
 public static void main(String[] args) {
     log1000Debug();
