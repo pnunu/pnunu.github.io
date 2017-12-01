@@ -36,4 +36,4 @@ bundle exec jekyll serve
 ```http://jekyllthemes.org```
 
 联系方式：
-qq： 398269786
+``` qq： 398269786 ```
