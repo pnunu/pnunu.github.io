@@ -1,5 +1,5 @@
 ---
-title: 装饰者模式[Decorator] - 一
+title: 设计模式（一）-装饰者模式[Decorator] 
 date: 2017-11-20 22:06:52
 ---
 
