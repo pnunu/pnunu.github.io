@@ -31,4 +31,11 @@
   border-left: .2rem solid #ccc;
   padding-left: 3.8rem;
 }
+
+::selection {
+  background: #24890d;
+  color: #fff;
+  text-shadow: none;
+}
+
 /* end Markdown styles */
