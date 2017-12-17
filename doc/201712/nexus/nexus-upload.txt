@@ -1,0 +1,8 @@
+https://jingyan.baidu.com/article/ed15cb1bb4ae401be2698178.html
+https://jingyan.baidu.com/article/a948d6517b72eb0a2dcd2e2a.html
+http://www.cnblogs.com/cb0327/p/5395335.html
+http://blog.csdn.net/clementad/article/details/52670968
+
+https://juejin.im/entry/59e58f80f265da430c10e277?from=timeline
+
+mvn deploy:deploy-file -DgroupId=xom.xom -DartifactId=xom-1.1 -Dversion=2017.10.18 -Dpackaging=jar -Dfile=D:\nunu\apache-maven-jiutian\repository\xom\xom\1.1\xom-1.1.jar -Durl=http://10.16.48.184:9001/repository/maven-3rd/ -DrepositoryId=maven-3rd

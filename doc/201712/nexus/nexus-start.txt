@@ -1,0 +1,23 @@
+#####start
+/home/jt/nexus/nexus-3.6.0-02/bin/
+./nexus run &
+##stop
+ps -ef | grep nexus
+#home
+/home/jt/nexus/nexus-3.6.0-02
+
+
+
+###修改 NEXUS3 的运行用户为 ROOT
+vim nexus.rc
+#设置
+#run_as_user="root"
+#启动时要使用的 JDK 版本
+vim nexus
+##修改 NEXUS3 默认端口
+nexus-3.6.0-02/etc/nexus-default.properties
+##修改 NEXUS3 数据以及相关日志的存储位置
+nexus-3.6.0-02/bin/nexus.vmoptions
+-XX:LogFile=./sonatype-work/nexus3/log/jvm.log
+-Dkaraf.data=./sonatype-work/nexus3
+-Djava.io.tmpdir=./sonatype-work/nexus3/tmp
