@@ -1,7 +1,7 @@
 # theme: jekyll-theme-cayman
 title: NUNU
 description:      "Such theme, very cool."
-url:              http://pnunu.cn # Site url, without a slash at the end.
+url:              https://pnunu.github.io # Site url, without a slash at the end.
 signoff:          "pnunu" # Your name
 facebook_appid:   # APP ID for like button, remove from /_includes/share.html if unwanted.
 google_analytics: # Set tracking, remove from /javascripts/basic.js if unwanted.
@@ -21,9 +21,7 @@ defaults:
   - values:
       layout: "default"
 
-owner: 
+owner:
   name: "小小暮雨"
   email: bjnunu@163.com
   bio: ""
-
-theme: jekyll-theme-tactile
