@@ -6,5 +6,5 @@ title: 关于我
 
 #### Git :   [GitHub](https://github.com/pnunu/) ``` https://github.com/pnunu/ ``` or  [码云](https://gitee.com/pnunu/) ``` https://gitee.com/pnunu/ ```. 
 
-#### Blog :  http://pnunu.cn/  ```.
+#### Blog :  ``` http://pnunu.cn/  ```.
 
