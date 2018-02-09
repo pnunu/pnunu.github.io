@@ -100,5 +100,5 @@ GitHub 地址：``` https://github.com/jgm/pandoc ```
 内容来自互联网。
 
 [1]: https://pnunu.github.io/     "pnunu" 
-[2]: http://ipnunu.gitee.io/      "ipnunu"
+[2]: http://pnunu.gitee.io/       "pnunu"
 [3]: /images/scribble.png         "Title"  
