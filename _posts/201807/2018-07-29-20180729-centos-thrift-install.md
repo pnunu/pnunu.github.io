@@ -51,4 +51,9 @@ sudo make install
 cd .. 
 ```
 
+安装成功
+
+``` 
+[root@localhost ~]# thrift -version
+Thrift version 1.0.0-dev ```
 
