@@ -24,12 +24,12 @@ git pull origin master --allow-unrelated-histories
 - 操作
 
 ```
-E:\IdeaProjects\pnunu\pnunu-io>git pull origin master
+> git pull origin master
 From https://github.com/pnunu/pnunu-io
  * branch            master     -> FETCH_HEAD
 fatal: refusing to merge unrelated histories
 
-E:\IdeaProjects\pnunu\pnunu-io>git pull origin master --allow-unrelated-histories
+> git pull origin master --allow-unrelated-histories
 From https://github.com/pnunu/pnunu-io
  * branch            master     -> FETCH_HEAD
 Merge made by the 'recursive' strategy.
@@ -37,4 +37,19 @@ Merge made by the 'recursive' strategy.
  1 file changed, 23 insertions(+)
  create mode 100644 .gitignore
 
+```
+
+
+# 删除分支
+
+```
+> git branch -d firewalld
+Deleted branch firewalld (was 58cd62a).
+
+> git branch
+* master
+
+>  git push origin :firewalld
+To https://github.com/pnunu/pnunu.github.io.git
+ - [deleted]         firewalld
 ```
