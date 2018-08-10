@@ -53,3 +53,18 @@ Deleted branch firewalld (was 58cd62a).
 To https://github.com/pnunu/pnunu.github.io.git
  - [deleted]         firewalld
 ```
+
+## 小结
+Git 应该大量使用分支
+
+查看分支：git branch
+
+创建分支：git branch <name>
+
+切换分支：git checkout <name>
+
+创建+切换分支：git checkout -b <name>
+
+合并某分支到当前分支：git merge <name>
+
+删除分支：git branch -d <name>
