@@ -25,3 +25,6 @@ owner:
   name: "小小暮雨"
   email: bjnunu@163.com
   bio: ""
+
+paginate: 5
+paginate_path: "blog/page:num"
