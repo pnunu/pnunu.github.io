@@ -6,6 +6,8 @@ date: 11:38 2018/10/8
 ## 环境
 centOS 7
 
+oracle 11g 
+
 ## oracle数据库的启动
 
     [oracle@oracledb ~]$ source  /home/oracle/.bash_profile
