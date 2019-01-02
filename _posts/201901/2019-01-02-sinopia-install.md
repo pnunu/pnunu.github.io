@@ -185,7 +185,7 @@ date: 15:43 2019/1/2
 
 [用sinopia搭建内部npm服务](https://www.cnblogs.com/czf-zone/p/6860457.html)
 
-[简介 | PM2 【推荐】](https://wohugb.gitbooks.io/pm2/content/)
+[简介 | PM2](https://wohugb.gitbooks.io/pm2/content/)
 
 [使用nrm管理npm仓库](https://blog.csdn.net/kongxx/article/details/73350813)
 
