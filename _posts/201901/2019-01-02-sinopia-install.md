@@ -188,3 +188,5 @@ date: 15:43 2019/1/2
 [简介 | PM2 (推荐)](https://wohugb.gitbooks.io/pm2/content/)
 
 [使用nrm管理npm仓库](https://blog.csdn.net/kongxx/article/details/73350813)
+
+[利用npm安装/删除/发布/更新/撤销发布包](https://www.cnblogs.com/penghuwan/p/6973702.html)
