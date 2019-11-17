@@ -1,0 +1,38 @@
+nexus
+1.component name 的一些说明：(Repositoriesnexus)
+1）maven-central：maven 中央库，默认从 repo1.maven.org/maven2 / 拉取 jar
+2）maven-releases：私库发行版 jar
+3）maven-snapshots：私库快照（调试版本）jar
+4）maven-public：仓库分组，把上面三个仓库组合在一起对外提供服务，在本地 maven 基础配置 settings.xml 中使用。
+2.Nexus 默认的仓库类型有以下四种：
+1）group(仓库组类型)：又叫组仓库，用于方便开发人员自己设定的仓库；
+2）hosted(宿主类型)：内部项目的发布仓库（内部开发人员，发布上去存放的仓库）；
+3）proxy(代理类型)：从远程中央仓库中寻找数据的仓库（可以点击对应的仓库的 Configuration 页签下 Remote Storage Location 属性的值即被代理的远程仓库的路径）；
+4）virtual(虚拟类型)：虚拟仓库（这个基本用不到，重点关注上面三个仓库的使用）；
+3.Policy(策略): 表示该仓库为发布 (Release) 版本仓库还是快照 (Snapshot) 版本仓库；
+4.Public Repositories 下的仓库
+1）3rd party: 无法从公共仓库获得的第三方发布版本的构件仓库，即第三方依赖的仓库，这个数据通常是由内部人员自行下载之后发布上去；
+2）Apache Snapshots: 用了代理 ApacheMaven 仓库快照版本的构件仓库
+3）Central: 用来代理 maven 中央仓库中发布版本构件的仓库
+4）Central M1 shadow: 用于提供中央仓库中 M1 格式的发布版本的构件镜像仓库
+5）Codehaus Snapshots: 用来代理 CodehausMaven 仓库的快照版本构件的仓库
+6）Releases: 内部的模块中 release 模块的发布仓库，用来部署管理内部的发布版本构件的宿主类型仓库；release 是发布版本；
+7）Snapshots: 发布内部的 SNAPSHOT 模块的仓库，用来部署管理内部的快照版本构件的宿主类型仓库；snapshots 是快照版本，也就是不稳定版本所以自定义构建的仓库组代理仓库的顺序为：Releases，Snapshots，3rd party，Central。也可以使用 oschina 放到 Central 前面，下载包会更快。
+5.Nexus 默认的端口是 8081，可以在 etc/nexus-default.properties 配置中修改。
+6.Nexus 默认的用户名密码是 admin/admin123
+当遇到奇怪问题时，重启 nexus，重启后 web 界面要 1 分钟左右后才能访问。
+8.Nexus 的工作目录是 sonatype-work（路径一般在 nexus 同级目录下）
+[root@master-node local]# pwd
+/usr/local
+[root@master-node local]# ls nexus/
+bin deploy etc lib LICENSE.txt NOTICE.txt public system
+[root@master-node local]# ls sonatype-work/
+nexus3
+[root@master-node local]# ls sonatype-work/nexus3/
+backup blobs cache db elasticsearch etc generated-bundles health-check instances keystores lock log orient port tmp
+
+Nexus 仓库分类的概念：
+1）Maven 可直接从宿主仓库下载构件, 也可以从代理仓库下载构件, 而代理仓库间接的从远程仓库下载并缓存构件
+2）为了方便, Maven 可以从仓库组下载构件, 而仓库组并没有时间的内容 (下图中用虚线表示, 它会转向包含的宿主仓库或者代理仓库获得实际构件的内容).
+
+
