@@ -42,8 +42,6 @@ bundle exec jekyll serve
 联系方式：
 
 
-``` qq： 398269786 ```
-
 微信：
 
 ![微信](http://pnunu.cn/images/weixin.jpg)
