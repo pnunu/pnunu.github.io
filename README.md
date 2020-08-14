@@ -55,3 +55,9 @@ bundle exec jekyll serve
 [URL=https://info.flagcounter.com/gnaM][IMG]https://s05.flagcounter.com/count2/gnaM/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/[/IMG][/URL]
 
 ```
+
+### https://gitpod.io/
+
+-- https://www.gitpod.io/docs/getting-started/
+
+使用（例如 https://gitpod.io/#https://gitlab.com/gitpod/spring-petclinic）在浏览器的地址栏中为 URL 添加前缀，或者如果您安装了 Gitpod浏览器扩展名，请单击Gitpod 按钮。
